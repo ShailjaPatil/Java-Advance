@@ -31,9 +31,9 @@ public class UserModelTest {
 			UserModel model= new UserModel();
 	
 			
-			bean.setFirstname("shivangi");
-			bean.setLastname("savita");
-			bean.setLoginid("shivangi@gmial.com");
+			bean.setFirstname("shiwali");
+			bean.setLastname("gautam");
+			bean.setLoginid("siwali@gmial.com");
 			bean.setPassword("123");
 			bean.setDob(sdf.parse("2024-02-02"));
 			bean.setAddress("Indore");
