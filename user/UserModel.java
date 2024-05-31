@@ -211,12 +211,12 @@ public class UserModel {
 			
 			if( bean.getFirstname()!=null && bean.getFirstname().length()>0) {
 				
-				sql.append("firstname like '" + bean.getFirstname()+ "%'");
+				sql.append(" and firstname like '" + bean.getFirstname()+ "%'");
 			}
 			
 			if(bean.getDob()!=null && bean.getDob().getTime()>0) {
 				
-				sql.append("and dob like ' "+ new java.sql.Date(bean.getDob().getTime())+ "%'");
+				sql.append("and dob like'"+ new java.sql.Date(bean.getDob().getTime())+ "%'");
 			}
 			
 		}
@@ -225,13 +225,14 @@ public class UserModel {
 		
 		PreparedStatement pstmt= conn.prepareStatement(sql.toString());
 		
-		ResultSet rst = pstmt .executeQuery();
+		ResultSet rst = pstmt.executeQuery();
 		
 		List list= new ArrayList();
+		 
 		
 		while(rst.next()) {
 			bean = new UserBean();
-			
+		
 			bean.setId(rst.getInt(1));
 			bean.setFirstname(rst.getString(2));
 			bean.setLastname(rst.getString(3));
@@ -239,6 +240,7 @@ public class UserModel {
 			bean.setPassword(rst.getString(5));
 			bean.setDob(rst.getDate(6));
 			bean.setAddress(rst.getString(7));
+			
 			list.add(bean);
 		}
 		return list;

@@ -13,7 +13,7 @@ public class UserModelTest {
 	
 	public static void main(String[] args) throws Exception {
 
-		testAdd();
+//		testAdd();
 //		testFindByPk();
 //		testFindByLoginId();
 //		testAuth();
@@ -124,13 +124,9 @@ public class UserModelTest {
 				
 				bean= (UserBean)it.next();
 				
-				System.out.println(bean.getFirstname());
+				System.out.println(bean.getFirstname()+ "hello");
 			}
 			
 		}
-	
-	
-	
-	
 
 }
