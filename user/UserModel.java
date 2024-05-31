@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.rays.bean.UserBean;
+import com.rays.util.JDBCDataSource;
 
 public class UserModel {
 	
@@ -22,9 +23,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcadvance", "root", "root");
 		
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+	
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt= conn.prepareStatement("select max(id) from users");
 		
@@ -45,9 +47,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcadvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt= conn.prepareStatement("insert into users values(?,?,?,?,?,?,?)");
 		
@@ -78,9 +81,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCAdvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement("update users set firstname=?, lastname=?, loginid=?, password=?, dob=?, address=? where id= ?");
 		
@@ -102,9 +106,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCAdvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement("delete from users where id = ?");
 		
@@ -126,9 +131,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCAdvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement("select * from users where id = ?");
 
@@ -160,9 +166,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCAdvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement("select * from users where loginid = ?");
 		
@@ -194,9 +201,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCAdvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement("select * from users where loginid = ? and password= ?");
 		
@@ -228,9 +236,10 @@ public class UserModel {
 //		Class.forName("com.mysql.cj.jdbc.Driver");
 //		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/JDBCAdvance", "root", "root");
 
-		Class.forName(rb.getString("driver"));
-		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
-		
+//		Class.forName(rb.getString("driver"));
+//		Connection conn= DriverManager.getConnection(rb.getString("url"), rb.getString("username"), rb.getString("password"));
+
+		Connection conn = JDBCDataSource.getConnection();
 		
 		StringBuffer sql= new StringBuffer("select * from users where 1=1");
 		
